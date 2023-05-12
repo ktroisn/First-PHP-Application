@@ -1,0 +1,95 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    background: rgb(167, 234, 241);
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box-add-product {
+    background-color: whitesmoke;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    color: rgb(172, 172, 172);
+}
+
+h1 {
+    margin-top: 0;
+    color: rgb(172, 172, 172);
+}
+
+.input-text-int {
+    padding: 10px;
+    border: 1px rgb(172, 172, 172) solid;
+    border-radius: 20px;
+    color: rgb(172, 172, 172);
+}
+
+.input-text-int:focus{
+    outline: none;
+    border: 1px rgb(167, 234, 241) solid;
+}
+
+.input-button {
+    padding: 10px 20px 10px 20px;
+    color: rgb(172, 172, 172);
+    background-color: rgb(167, 234, 241);
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.input-button:hover {
+    color: white;
+    background-color: rgb(167, 234, 241);
+   
+}
+
+a {
+    text-decoration: none;
+    color: rgb(172, 172, 172);
+    font-size: 0.8rem;
+}
+
+a:visited {
+    color: rgb(172, 172, 172);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    10% {opacity: 1;
+        transform: translateX(150px);}
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.animation {
+    position: absolute;
+    z-index: 0;
+    right: 563px;
+    bottom: 179.3px;
+    opacity: 0;
+    animation: fadeIn 10s;
+}
+  
