@@ -109,7 +109,7 @@ a:visited {
 .delete-one {
     background: none;
     border: 1px solid rgb(239, 138, 138);
-    padding: 5px 10px 5px 11px;
+    padding: 5px 10px 5px 10px;
     border-radius: 20px;
     transition-duration: 0.2s;
     color: rgb(239, 138, 138);
@@ -142,4 +142,8 @@ a:visited {
 
 .add-qtt {
     cursor: pointer;
+}
+
+td[colspan="3"] {
+    text-align: center;
 }

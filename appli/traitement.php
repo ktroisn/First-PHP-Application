@@ -33,26 +33,25 @@
 
     // Si le formulaire de suppression de tous les produits a été soumis, détruit la session
     if(isset($_POST['deleteall'])){
-        session_destroy();
+        $_SESSION['products'] = array ();
     }
     
     // Redirige l'utilisateur vers la page d'accueil
     header("Location:index.php");
     
-    // Parcourt la liste des produits enregistrés en session
-    foreach ($_SESSION['products'] as $index => $value){
         // Si le formulaire de suppression du produit en cours a été soumis, supprime le produit de la session
-        if(isset($_POST[$index])){
+        if(isset($_POST['deleteOne'])){
+            $index = $_POST['index'];
             unset($_SESSION['products'][$index]); 
             // Redirige l'utilisateur vers la page de récapitulatif des produits
             header("Location:recap.php"); 
         }
-    }
+    
 
-    // Parcourt la liste des produits enregistrés en session
-    foreach ($_SESSION['products'] as $index => $product) {
         // Si le formulaire d'ajout de quantité du produit en cours a été soumis, incrémente la quantité et met à jour le total
-        if (isset($_POST[$index . 'add'])) { 
+        elseif (isset($_POST['add'])) { 
+            // 
+            $index = $_POST['index'];
             // Incrémente la quantité du produit en cours
             $_SESSION['products'][$index]['qtt'] += 1;
             // Met à jour le total du produit en fonction de sa quantité mise à jour
@@ -60,7 +59,9 @@
             // Redirige l'utilisateur vers la page de récapitulatif des produits
             header("Location: Recap.php");
             
-        } elseif (isset($_POST[$index . 'remove'])) {
+        } elseif (isset($_POST['remove'])) {
+            //
+            $index = $_POST['index'];
             // Si le formulaire de suppression de quantité du produit en cours a été soumis
             if ($_SESSION['products'][$index]['qtt'] > 1) {
                 // Décrémente la quantité du produit en cours si elle est supérieure à 1
@@ -72,7 +73,6 @@
             header("Location: Recap.php");
         
         }
-    }
 
     
 ?>

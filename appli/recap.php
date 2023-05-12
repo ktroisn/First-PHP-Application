@@ -53,7 +53,7 @@
                                     "<th>#</th>",
                                     "<th>Nom</th>",
                                     "<th>Prix</th>",
-                                    "<th>Quantité</th>",
+                                    "<th colspan='3'>Quantité</th>",
                                     "<th>Total</th>",
                                     "<th></th>",
                                 "</tr>",
@@ -71,9 +71,17 @@
                                 "<td>".$index."</td>",
                                 "<td>".$product['name']."</td>",
                                 "<td>".number_format($product['price'], 2, ",", "&nbsp;"). "&nbsp;€</td>",
-                                "<td><form action='./traitement.php' method='post'><input class='add-qtt' type='submit' name='" .$index. "add' value='+'> ".$product['qtt']." <input class='delete-qtt' type='submit' name='" .$index. "remove' value='-'></form></td>",
+                                "<td><form action='./traitement.php' method='post'>",
+                                "<input class='add-qtt' type='submit' name='add' value='+'>",
+                                "<input type='hidden' name='index' value='$index'></form></td>",
+                                "<td>".$product['qtt']."</td>", 
+                                "<td><form action='./traitement.php' method='post'>",
+                                "<input class='delete-qtt' type='submit' name='remove' value='-'>",
+                                "<input type='hidden' name='index' value='$index'></form></td>",
                                 "<td>".number_format($product['total'], 2, ",", "&nbsp;"). "&nbsp;€</td>",
-                                "<td><form action='./traitement.php' method='post'><input class='delete-one' type='submit' name='$index' value='X'/></form></td>",
+                                "<td><form action='./traitement.php' method='post'>",
+                                "<input class='delete-one' type='submit' name='deleteOne' value='X'/>",
+                                "<input type='hidden' name='index' value='$index'></form></td>",
                             "</tr>";
 
                         // Ajoute le total du produit au total général
