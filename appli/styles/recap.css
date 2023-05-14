@@ -147,3 +147,15 @@ a:visited {
 td[colspan="3"] {
     text-align: center;
 }
+
+.col-qtt {
+    width: 1%;
+}
+
+.position-button-add {
+    text-align: right;
+}
+
+.position-button-remove {
+    text-align: left;
+}
